@@ -1,0 +1,37 @@
+@import "../styles/_style.scss";
+.header {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	background-color: $color1;
+	position: sticky;
+	top: 0px;
+	z-index: 0px;
+
+	.logo {
+		// width: 100px;
+		height: 80%;
+		object-fit: contain;
+		margin: 10px 20px 0px;
+	}
+
+	.search {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		border-radius: 24px;
+
+		.searchInput {
+			height: 12px;
+			padding: 10px;
+			border: none;
+			width: 100%;
+		}
+
+		.searchIcon {
+			padding: 5px;
+			height: 22px;
+			background-color: $color2;
+		}
+	}
+}

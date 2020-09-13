@@ -1,0 +1,30 @@
+@import "../styles/_style.scss";
+.nav {
+	display: flex;
+	justify-content: space-evenly;
+
+	.option {
+		display: flex;
+		flex-direction: column;
+		margin: 0 10px;
+		color: $color3;
+
+		.optionLineOne {
+			font-size: 10px;
+		}
+		.optionLineTwo {
+			font-weight: 800;
+			font-size: 13px;
+		}
+	}
+
+	.optionBasket {
+		display: flex;
+		align-items: center;
+		color: $color3;
+
+		.basketCount {
+			margin: 0 10px;
+		}
+	}
+}
