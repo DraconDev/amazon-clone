@@ -11,8 +11,8 @@ const navInfo = [
 function Nav() {
 	return (
 		<div className={classes.nav}>
-			{navInfo.map((e) => (
-				<div className={classes.option}>
+			{navInfo.map((e, i) => (
+				<div key={i} className={classes.option}>
 					<span className={classes.optionLineOne}>{e.first}</span>
 					<span className={classes.optionLineTwo}>{e.second}</span>
 				</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Header.module.scss";
-import Nav from "./../Nav/Nav";
+import Nav from "./../Nav/Nav.tsx";
 import SearchIcon from "@material-ui/icons/Search";
 
 function Header() {
