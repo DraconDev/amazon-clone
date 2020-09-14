@@ -1,7 +1,7 @@
-import React from "react";
-import classes from "./Header.module.scss";
-import Nav from "./../Nav/Nav.tsx";
 import SearchIcon from "@material-ui/icons/Search";
+import React from "react";
+import Nav from "../Nav/Nav";
+import classes from "./Header.module.scss";
 
 function Header() {
 	return (

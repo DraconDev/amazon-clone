@@ -1,12 +1,19 @@
+import StarIcon from "@material-ui/icons/Star";
+import StarHalfIcon from "@material-ui/icons/StarHalf";
 import React from "react";
 import classes from "./StarRating.module.scss";
-import StarHalfIcon from "@material-ui/icons/StarHalf";
-import StarIcon from "@material-ui/icons/Star";
 
-function StarRating({ rating }) {
-	const stars = [];
+interface Props {
+	rating: number;
+}
+
+// const StarRating = (props: Props) => {
+function StarRating(props: Props) {
+	const { rating } = props;
+	const stars: JSX.Element[] = [];
+	console.log(rating);
+
 	const CalculateRating = () => {
-		// console.log("rating", rating);
 		const stars = [];
 		for (let index = 0; index < Math.floor(rating); index++) {
 			stars.push(
@@ -14,7 +21,6 @@ function StarRating({ rating }) {
 			);
 		}
 		if (rating % 1 >= 0.5 || !stars.length) {
-			// console.log("stars", stars);
 			stars.push(
 				<StarHalfIcon
 					key={Math.floor(rating) + 1}
@@ -22,15 +28,10 @@ function StarRating({ rating }) {
 				></StarHalfIcon>
 			);
 		}
-
 		return stars;
 	};
 
-	return (
-		<div className={classes.starRating}>
-			<CalculateRating></CalculateRating>
-		</div>
-	);
+	return <div className={classes.starRating}>{CalculateRating()}</div>;
 }
 
 export default StarRating;

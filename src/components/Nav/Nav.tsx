@@ -1,6 +1,6 @@
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import React from "react";
 import classes from "./Nav.module.scss";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 const navInfo = [
 	{ first: "Hello Guest", second: "Sign In" },
