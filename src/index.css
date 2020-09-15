@@ -2,6 +2,11 @@
 	margin: 0;
 }
 
+a {
+	/*? To fix Link Tags messing with container size */
+	height: inherit;
+}
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

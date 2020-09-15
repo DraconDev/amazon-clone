@@ -1,16 +1,16 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import StarRating from "../StarRating/StarRating";
 import classes from "./Product.module.scss";
-import { Button } from "@material-ui/core";
+interface Props {
+	title: string;
+	price: number;
+	rating: number;
+	image: string;
+}
 
-const productInfo = {
-	title: "Placeholder",
-	price: 20,
-	rating: null,
-};
-
-function Product() {
-	const { title, price, rating } = productInfo;
+function Product(props: Props) {
+	const { title, price, rating, image } = props;
 	return (
 		<div className={classes.product}>
 			<div className={classes.info}>
@@ -19,15 +19,9 @@ function Product() {
 				<strong>{price}</strong>
 			</div>
 			<div className={classes.rating}>
-				<StarRating rating={rating || Math.random() * 5} />
+				<StarRating rating={rating} />
 			</div>
-			<img
-				className={classes.productImage}
-				src={`https://picsum.photos/900/900?random=${Math.floor(
-					Math.random() * 10 + 1
-				)})`}
-				alt=""
-			></img>
+			<img className={classes.productImage} src={image} alt=""></img>
 			<Button variant="outlined" color="default">
 				Add To Basket
 			</Button>

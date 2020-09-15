@@ -1,0 +1,28 @@
+@import "../../theme/_style.scss";
+
+.checkout {
+	color: $color3;
+	display: flex;
+	// justify-content: space-around;
+	background-color: $color5;
+	padding: 20px;
+	height: max-content;
+	.left {
+		border-bottom: 1px solid $color3;
+		.ad {
+			width: 100%;
+			margin-bottom: 10px;
+			height: 15vh;
+			object-fit: cover;
+		}
+		.basket {
+			.title {
+				margin-right: 10px;
+				padding: 10px;
+			}
+		}
+	}
+	.right {
+		flex: 2;
+	}
+}

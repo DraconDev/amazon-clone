@@ -1,6 +1,7 @@
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import React from "react";
 import classes from "./Nav.module.scss";
+import { Link } from "react-router-dom";
 
 const navInfo = [
 	{ first: "Hello Guest", second: "Sign In" },
@@ -17,12 +18,14 @@ function Nav() {
 					<span className={classes.optionLineTwo}>{e.second}</span>
 				</div>
 			))}
-			<div className={classes.optionBasket}>
-				<ShoppingBasketIcon></ShoppingBasketIcon>
-				<span
-					className={`${classes.optionLineTwo} ${classes.basketCount}`}
-				></span>
-			</div>
+			<Link to="/checkout">
+				<div className={classes.optionBasket}>
+					<ShoppingBasketIcon></ShoppingBasketIcon>
+					<span
+						className={`${classes.optionLineTwo} ${classes.basketCount}`}
+					></span>
+				</div>
+			</Link>
 		</div>
 	);
 }

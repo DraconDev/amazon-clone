@@ -1,6 +1,15 @@
-import React from "react";
-import classes from "./Home.module.scss";
+import { default as React } from "react";
 import Product from "../Product/Product";
+import classes from "./Home.module.scss";
+
+const productInfo = {
+	title: "Placeholder",
+	price: 20,
+	rating: Math.random() * 5,
+	image: `https://picsum.photos/900/900?random=${Math.floor(
+		Math.random() * 10 + 1
+	)})`,
+};
 
 function Home() {
 	return (
@@ -12,14 +21,14 @@ function Home() {
 					alt=""
 				></img>
 				<div className={classes.row}>
-					<Product></Product>
-					<Product></Product>
-					<Product></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
 				</div>
 				<div className={classes.row}>
-					<Product></Product>
-					<Product></Product>
-					<Product></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
 				</div>
 			</div>
 		</div>

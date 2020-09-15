@@ -1,0 +1,23 @@
+@import "../../theme/_style.scss";
+.subtotal {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 300px;
+	height: 100px;
+	padding: 20px;
+	background-color: $color1;
+	border: 1px solid $color3;
+	border-radius: 3px;
+	button {
+		background-color: $color2;
+	}
+	.gift {
+		display: flex;
+		align-items: center;
+	}
+	.input {
+		margin-right: 5px;
+	}
+}
