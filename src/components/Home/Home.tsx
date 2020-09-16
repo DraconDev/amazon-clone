@@ -1,8 +1,9 @@
-import { default as React } from "react";
+import React from "react";
 import Product from "../Product/Product";
 import classes from "./Home.module.scss";
 
 const productInfo = {
+	// id:
 	title: "Placeholder",
 	price: 20,
 	rating: Math.random() * 5,

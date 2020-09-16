@@ -4,8 +4,10 @@ export const initialState = {
 	basket: [],
 };
 
+// ex1port const initialState = [];
+
 interface Props {
-	state: { basket: [] };
+	state: { basket: any };
 	action: { type: string; item: any };
 }
 

@@ -11,7 +11,6 @@ interface Props {
 function StarRating(props: Props) {
 	const { rating } = props;
 	const stars: JSX.Element[] = [];
-	console.log(rating);
 
 	const CalculateRating = () => {
 		const stars = [];
