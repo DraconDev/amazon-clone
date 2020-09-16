@@ -4,8 +4,6 @@ export const initialState: any = {
 	basket: [],
 };
 
-// ex1port const initialState = [];
-
 interface reducerProps {
 	state: { basket: any };
 	action: { type: string; item: any };

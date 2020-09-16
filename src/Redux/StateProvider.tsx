@@ -62,14 +62,3 @@ export function StateProvider(props: StateProviderProps) {
 
 //? Pull information from data layer
 export const useStateValue = () => useContext(StateContext);
-
-interface testingFunctionTypes {
-	cat: string;
-}
-
-function testingFunction({ ...props }: testingFunctionTypes) {
-	const { cat } = props;
-	console.log("object");
-
-	return cat;
-}
