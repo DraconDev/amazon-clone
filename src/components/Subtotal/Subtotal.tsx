@@ -3,13 +3,13 @@ import classes from "./Subtotal.module.scss";
 import { Button } from "@material-ui/core";
 const CurrencyFormat = require("react-currency-format");
 
-interface Props {
+interface SubTotalProps {
 	value: number;
 }
 //todo
 function getBasketTotal(total: number) {}
 
-function Subtotal(props: Props) {
+function Subtotal(props: SubTotalProps) {
 	console.log("props", props);
 	const { value } = props;
 	return (

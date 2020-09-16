@@ -5,19 +5,30 @@ import React, {
 	useReducer,
 } from "react";
 
-//? Default Props
+//? Default properties
 
-interface contextProps {
-	reducer: DispatchWithoutAction;
-	basket: any[];
+interface ContextProps {
+	// reducer: DispatchWithoutAction;
+	// basket: any[];
+	// state: object;
+	// action: any;
+	// children: any;
+	// state: any[];
+	// action: object;
 }
 
-interface Props {
-	state: { basket: any };
-	action: { type: string; item: any };
+interface StateContextProps {
+	// state: { basket: any };
+	// action: { type: string; item: any };
 }
 
-export const StateContext = createContext({ test: "test" });
+//? apparently needed
+// export const StateContext = createContext<Partial<any>>({});
+
+//?context
+export const StateContext = createContext({});
+
+// export const StateContext = createContext<Partial<ContextProps>>({});
 
 //?Prepares data
 // export const StateContext = createContext({
@@ -30,14 +41,14 @@ export const StateContext = createContext({ test: "test" });
 // 	[StateContext, Dispatch<AppAction>] | null
 // >(null);
 
-interface Props {
+interface StateProviderProps {
 	reducer: any;
 	initialState: {};
 	children: JSX.Element[] | JSX.Element;
 }
 
 //? Wraps the app and provides data
-export function StateProvider(props: Props) {
+export function StateProvider(props: StateProviderProps) {
 	const { reducer, initialState, children } = props;
 	return (
 		// <StateContext.Provider value={useReducer(reducer, initialState)}>
@@ -51,3 +62,14 @@ export function StateProvider(props: Props) {
 
 //? Pull information from data layer
 export const useStateValue = () => useContext(StateContext);
+
+interface testingFunctionTypes {
+	cat: string;
+}
+
+function testingFunction({ ...props }: testingFunctionTypes) {
+	const { cat } = props;
+	console.log("object");
+
+	return cat;
+}

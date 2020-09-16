@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./BasketItem.module.scss";
 
-interface Props {}
+interface BasketProps {}
 
-function BasketItem(props: Props) {
+function BasketItem(props: BasketProps) {
 	return <div className={classes.basketItem}></div>;
 }
 

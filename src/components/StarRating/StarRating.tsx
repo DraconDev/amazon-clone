@@ -3,12 +3,11 @@ import StarHalfIcon from "@material-ui/icons/StarHalf";
 import React from "react";
 import classes from "./StarRating.module.scss";
 
-interface Props {
+interface StarRatingProps {
 	rating: number;
 }
 
-// const StarRating = (props: Props) => {
-function StarRating(props: Props) {
+function StarRating(props: StarRatingProps) {
 	const { rating } = props;
 	const stars: JSX.Element[] = [];
 
