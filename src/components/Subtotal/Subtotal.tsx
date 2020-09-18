@@ -13,7 +13,10 @@ function getBasketTotal(basket: any) {
 	console.log("e", basket);
 	if (basket.length > 0) {
 		//? 0 at the end is the initial value of accumulator
-		return basket.reduce((acc: 0, e: any) => acc + e.price, 0);
+		return basket.reduce(
+			(acc: number, e: { price: number }) => acc + e.price,
+			0
+		);
 	} else {
 		return 0;
 	}
@@ -27,12 +30,20 @@ function Subtotal(props: SubTotalProps) {
 	const { value } = props;
 	return (
 		<div className={classes.subtotal}>
-			<CurrencyFormat
+			{/* {new Intl.NumberFormat("de-DE").format(getBasketTotal(state.basket))} $ */}
+			<p>
+				Subtotal ({state.basket.length} items):{" "}
+				<strong>
+					{new Intl.NumberFormat("de-DE").format(getBasketTotal(state.basket))}$
+				</strong>
+				{/* <p>{getBasketTotal(state.basket)}</p> */}
+			</p>
+			{/* <CurrencyFormat
 				renderText={() => (
 					<React.Fragment>
 						<p>
-							Subtotal ({state.basket.length} items):{" "}
-							<strong>{getBasketTotal(state.basket)}$</strong>
+							Subtotal ({state.basket.length} items): <strong>{value}$</strong>
+							<p>{getBasketTotal(state.basket)}</p>
 						</p>
 						<small className={classes.gift}>
 							<input type="checkbox" /> this order contains a gift
@@ -42,11 +53,11 @@ function Subtotal(props: SubTotalProps) {
 				// value={}
 				decimalScale={2}
 				// todo
-				value={getBasketTotal(value)}
+				value={getBasketTotal(state.basket)}
 				displayType={"text"}
 				thousandSeparator={true}
 				prefix={"$"}
-			></CurrencyFormat>
+			></CurrencyFormat> */}
 			<Button variant="contained">Proceed to checkout</Button>{" "}
 		</div>
 	);

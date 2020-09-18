@@ -21,7 +21,7 @@ function Checkout(props: CheckoutProps) {
 				</div>
 			</div>
 			<div className={classes.right}>
-				<Subtotal value={5}></Subtotal>
+				<Subtotal value={0}></Subtotal>
 			</div>
 		</div>
 	);
