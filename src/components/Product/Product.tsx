@@ -1,7 +1,13 @@
 import { Button } from "@material-ui/core";
 import React, { useContext } from "react";
+import { ADD_TO_BASKET } from "../../store/actionTypes";
+import { AppContext } from "../../store/AppContext";
+import {
+	useDispatchStore,
+	useStateValue,
+	useStore,
+} from "../../store/customHooks/customHooks";
 import StarRating from "../StarRating/StarRating";
-import { StateContext } from "./../../Redux/StateProvider";
 import classes from "./Product.module.scss";
 
 interface productProps {
@@ -12,43 +18,20 @@ interface productProps {
 	id?: string;
 }
 
-//? Desctructure later with types
-// function Product(props: productProps) {
-// 	const { id, title, price, rating, image } = props;
-
 //? Desctructure with types
 function Product({ id, title, price, rating, image }: productProps) {
-	// const { id, title, price, rating, image } = props;
-	// console.log("useContext(StateContext", useContext(StateContext));
+	const [state2, dispatch2] = useContext(AppContext);
+	// console.log("useStateValue", useStateValue());
+	// console.log("state2", state2);
+	// console.log("dispatch2", dispatch2);
+	const dispatch = useDispatchStore();
 
-	// export const AppContext = React.createContext<[StateContext, Dispatch<AppAction>] | null>(null);
-
-	const test = useContext(StateContext);
-
-	const appContext = useContext(StateContext);
-	// const [state, dispatch] = appContext;
-	console.log("appContext", appContext);
-
-	// const useTheme = () => React.useContext(StateContext);
-	// const [state, dispatch] = useTheme();
-	console.log("test", test);
-	// console.log("useTheme", useTheme);
-	// const [[], dispatch: any] = useContext(StateContext);
-
-	// function addToBasket() {
-	// 	dispatch({
-	// 		type: ADD_TO_BASKET,
-	// 		item: {
-	// 			id: id,s
-	// 			title: title,
-	// 			image: image,
-	// 			price: price,
-	// 			rating: rating,
-	// 		},
-	// 	});
-	// 	return {};
-	// }
-
+	function addToBasket() {
+		return dispatch({
+			type: ADD_TO_BASKET,
+			item: { id, title, image, price, rating },
+		});
+	}
 	return (
 		<div className={classes.product}>
 			<div className={classes.info}>
@@ -60,7 +43,7 @@ function Product({ id, title, price, rating, image }: productProps) {
 				<StarRating rating={rating} />
 			</div>
 			<img className={classes.productImage} src={image} alt=""></img>
-			<Button variant="outlined" color="default">
+			<Button onClick={() => addToBasket()} variant="outlined" color="default">
 				Add To Basket
 			</Button>
 		</div>

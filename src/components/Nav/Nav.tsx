@@ -1,14 +1,14 @@
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import React from "react";
-import classes from "./Nav.module.scss";
 import { Link } from "react-router-dom";
+import { useStore } from "../../store/customHooks/customHooks";
+import classes from "./Nav.module.scss";
 
 const navInfo = [
 	{ first: "Hello Guest", second: "Sign In" },
 	{ first: "Returns", second: "Orders" },
 	{ first: "Your", second: "Prime" },
 ];
-
 function Nav() {
 	return (
 		<div className={classes.nav}>
@@ -21,9 +21,9 @@ function Nav() {
 			<Link to="/checkout">
 				<div className={classes.optionBasket}>
 					<ShoppingBasketIcon></ShoppingBasketIcon>
-					<span
-						className={`${classes.optionLineTwo} ${classes.basketCount}`}
-					></span>
+					<span className={`${classes.optionLineTwo} ${classes.basketCount}`}>
+						{useStore()?.length}
+					</span>
 				</div>
 			</Link>
 		</div>
