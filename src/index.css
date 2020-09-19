@@ -5,6 +5,7 @@
 a {
 	/*? To fix Link Tags messing with container size */
 	height: inherit;
+	text-decoration: none;
 }
 
 body {

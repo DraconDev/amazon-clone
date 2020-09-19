@@ -1,0 +1,14 @@
+@import "../../theme/_style.scss";
+.basket {
+	display: flex;
+	align-items: center;
+}
+.optionBasket {
+	display: flex;
+	align-items: center;
+	color: $color3;
+}
+
+.basketCount {
+	margin: 0 10px;
+}

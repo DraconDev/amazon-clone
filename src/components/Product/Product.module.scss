@@ -5,21 +5,31 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 10px;
+	margin-bottom: 25px;
 	width: 100%;
 	// max-width: 20%;
-	max-height: 400px;
+	height: 600px;
 	min-width: 120px;
+	width: 300px;
 	background-color: $color3;
 	z-index: 1;
+	justify-content: space-around;
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0.9)
+	);
 
 	.rating {
 	}
 	img {
 		// width: 100%;
 		object-fit: cover;
-		max-height: 200px;
+		height: 320px;
+		max-width: 240px;
+
 		// margin-bottom: 15px;
-		margin: 5px;
+		// margin: 5px;
 	}
 
 	.info {
@@ -29,11 +39,11 @@
 		padding: 0px 10px;
 		line-height: 20px;
 		font-weight: 400;
+		width: 200px;
 		// word-wrap: break-word;
 	}
 
 	button {
-		margin-top: 5px;
 		background-color: $color2;
 		margin-bottom: 5px;
 	}

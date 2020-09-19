@@ -12,10 +12,10 @@ function Subtotal(props: SubTotalProps) {
 	return (
 		<div className={classes.subtotal}>
 			<p>
-				Subtotal ({state.basket.length} items):
+				Subtotal ({state?.basket.length} items):
 				<strong>
 					{/* //? easy format for currency */}{" "}
-					{`$${getBasketTotal(state.basket)}`}
+					{`$${getBasketTotal(state?.basket)}`}
 				</strong>
 				<small className={classes.gift}>
 					<input type="checkbox" /> this order contains a gift

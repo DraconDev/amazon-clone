@@ -11,7 +11,7 @@ function BasketItems(props: BasketProps) {
 	console.log("state,dispatch", state, dispatch);
 	return (
 		<div className={classes.basketItems}>
-			{state.basket.map((item: ItemProps) => (
+			{state?.basket.map((item: ItemProps) => (
 				<CheckoutProduct
 					{...item}
 					// id={item.id}

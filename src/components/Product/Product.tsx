@@ -36,7 +36,7 @@ function Product({ id, title, price, rating, image }: productProps) {
 	return (
 		<div className={classes.product}>
 			<img className={classes.productImage} src={image} alt=""></img>
-			<div className={classes.info}>{truncate(title, 180)}</div>
+			<div className={classes.info}>{truncate(title, 160)}</div>
 			<div className={classes.rating}>
 				<StarRating rating={rating} />
 			</div>

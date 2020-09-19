@@ -18,24 +18,6 @@ const productInfo = {
 	)})`,
 };
 
-// function productInfo() {
-// 	return {
-// 		item: {
-// 			id: `${Math.floor(Math.random() * 9)}${Math.floor(
-// 				Math.random() * 9
-// 			)}${Math.floor(Math.random() * 9)}${Math.floor(
-// 				Math.random() * 9
-// 			)}${Math.floor(Math.random() * 9)}${Math.floor(Math.random() * 9)}`,
-// 			title: "Placeholder",
-// 			price: 267.14,
-// 			rating: Math.random() * 5,
-// 			image: `https://picsum.photos/900/900?random=${Math.floor(
-// 				Math.random() * 10 + 1
-// 			)})`,
-// 		},
-// 	};
-// }
-
 function Home() {
 	return (
 		<div className={classes.home}>
@@ -46,6 +28,11 @@ function Home() {
 					alt=""
 				></img>
 				<div className={classes.row}>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
+					<Product {...productInfo}></Product>
 					<Product {...productInfo}></Product>
 					<Product {...productInfo}></Product>
 					<Product {...productInfo}></Product>
