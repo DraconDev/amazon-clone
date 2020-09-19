@@ -14,12 +14,26 @@ function Nav() {
 	const [state, dispatch] = useStateValue();
 	return (
 		<div className={classes.nav}>
-			{navInfo.map((e, i) => (
+			{/* {navInfo.map((e, i) => (
 				<div key={i} className={classes.option}>
 					<span className={classes.optionLineOne}>{e.first}</span>
 					<span className={classes.optionLineTwo}>{e.second}</span>
 				</div>
-			))}
+			))} */}
+			<Link to="/login">
+				<div className={classes.option}>
+					<span className={classes.optionLineOne}>{"Hello"}</span>
+					<span className={classes.optionLineTwo}>{"Sign In"}</span>
+				</div>
+			</Link>
+			<div className={classes.option}>
+				<span className={classes.optionLineOne}>{"Returns"}</span>
+				<span className={classes.optionLineTwo}>{"Orders"}</span>
+			</div>
+			<div className={classes.option}>
+				<span className={classes.optionLineOne}>{"Your"}</span>
+				<span className={classes.optionLineTwo}>{"Prime"}</span>
+			</div>
 			<Basket></Basket>
 		</div>
 	);

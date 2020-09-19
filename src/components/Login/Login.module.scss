@@ -1,3 +1,11 @@
+@import "../../theme/_style.scss";
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	color: $color3;
+}
 .logo {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -6,9 +14,32 @@
 	margin-right: auto;
 	margin-left: auto;
 }
-.login {
+
+.form {
+	width: 300px;
+	height: fit-content;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	height: 100vh;
+	border-radius: 5px;
+	border: 1px solid $color1;
+	padding: 20px;
+}
+
+.form {
+	button {
+		margin: 5px 0;
+		background-color: $color2;
+	}
+	input {
+		height: 30px;
+		margin-bottom: 10px;
+		background-color: $color1;
+		color: inherit;
+		width: 98%;
+	}
+}
+
+.signInAgreement {
+	margin-top: 15px;
+	font-size: 12px;
 }

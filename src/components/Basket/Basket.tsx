@@ -1,8 +1,8 @@
-import React from "react";
-import classes from "./Basket.module.scss";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import { useStateValue } from "./../../store/customHooks/customHooks";
+import { default as React } from "react";
 import { Link } from "react-router-dom";
+import { useStateValue } from "./../../store/customHooks/customHooks";
+import classes from "./Basket.module.scss";
 
 function Basket() {
 	const [state, dispatch] = useStateValue();

@@ -15,7 +15,7 @@ function Checkout() {
 		<div className={classes.checkout}>
 			<div className={classes.left}>
 				<Link to="/">
-					<img className={classes.ad} src={useGetImage("mainLogo")} alt="" />
+					<img className={classes.ad} src={useGetImage("banner")} alt="" />
 				</Link>
 				<div className={classes.basket}>
 					<h2 className={classes.title}>Your shopping basket</h2>
