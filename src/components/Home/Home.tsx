@@ -1,16 +1,40 @@
+import { title } from "process";
 import React from "react";
 import Product from "../Product/Product";
 import classes from "./Home.module.scss";
 
 const productInfo = {
-	// id:
-	title: "Placeholder",
+	id: `${Math.floor(Math.random() * 9)}${Math.floor(
+		Math.random() * 9
+	)}${Math.floor(Math.random() * 9)}${Math.floor(
+		Math.random() * 9
+	)}${Math.floor(Math.random() * 9)}${Math.floor(Math.random() * 9)}`,
+	title:
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus quia et esse? Quod repellendus sit, ipsam voluptatibus consequuntur doloremque eaque dolorum. Atque amet eos ratione, sequi omnis veniam nesciunt.",
 	price: 267.14,
 	rating: Math.random() * 5,
 	image: `https://picsum.photos/900/900?random=${Math.floor(
 		Math.random() * 10 + 1
 	)})`,
 };
+
+// function productInfo() {
+// 	return {
+// 		item: {
+// 			id: `${Math.floor(Math.random() * 9)}${Math.floor(
+// 				Math.random() * 9
+// 			)}${Math.floor(Math.random() * 9)}${Math.floor(
+// 				Math.random() * 9
+// 			)}${Math.floor(Math.random() * 9)}${Math.floor(Math.random() * 9)}`,
+// 			title: "Placeholder",
+// 			price: 267.14,
+// 			rating: Math.random() * 5,
+// 			image: `https://picsum.photos/900/900?random=${Math.floor(
+// 				Math.random() * 10 + 1
+// 			)})`,
+// 		},
+// 	};
+// }
 
 function Home() {
 	return (

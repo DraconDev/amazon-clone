@@ -1,0 +1,36 @@
+@import "../../theme/_style.scss";
+
+.checkoutProduct {
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	.bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.image {
+		width: 180px;
+		object-fit: contain;
+		height: 180px;
+	}
+	.info {
+		padding-left: 20px;
+		display: flex;
+		flex-direction: column;
+		.price {
+			margin: 5px 0;
+		}
+		.title {
+			font-size: 17px;
+			font-weight: 600;
+		}
+	}
+
+	button {
+		background-color: $color2;
+		margin-top: 10px;
+		align-self: flex-end;
+	}
+}

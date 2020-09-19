@@ -9,6 +9,7 @@ import {
 } from "../../store/customHooks/customHooks";
 import StarRating from "../StarRating/StarRating";
 import classes from "./Product.module.scss";
+import { truncate } from "../../helpers/truncate";
 
 interface productProps {
 	title: string;
@@ -34,15 +35,15 @@ function Product({ id, title, price, rating, image }: productProps) {
 	}
 	return (
 		<div className={classes.product}>
-			<div className={classes.info}>
-				<p className={classes.price}>{title}</p>
-				<small>$</small>
-				<strong>{price}</strong>
-			</div>
+			<img className={classes.productImage} src={image} alt=""></img>
+			<div className={classes.info}>{truncate(title, 180)}</div>
 			<div className={classes.rating}>
 				<StarRating rating={rating} />
 			</div>
-			<img className={classes.productImage} src={image} alt=""></img>
+			<div className={classes.price}>
+				<small>$</small>
+				<strong>{price}</strong>
+			</div>
 			<Button onClick={() => addToBasket()} variant="outlined" color="default">
 				Add To Basket
 			</Button>

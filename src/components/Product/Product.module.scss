@@ -4,7 +4,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
 	margin: 10px;
 	width: 100%;
 	// max-width: 20%;
@@ -14,7 +13,6 @@
 	z-index: 1;
 
 	.rating {
-		// background-color: #f00;
 	}
 	img {
 		// width: 100%;
@@ -26,14 +24,17 @@
 
 	.info {
 		height: 100px;
-		margin-bottom: 15px;
-		.price {
-			margin-top: 5px;
-		}
+		margin-bottom: 2px;
+		overflow: hidden;
+		padding: 0px 10px;
+		line-height: 20px;
+		font-weight: 400;
+		// word-wrap: break-word;
 	}
 
 	button {
 		margin-top: 5px;
 		background-color: $color2;
+		margin-bottom: 5px;
 	}
 }
