@@ -3,11 +3,12 @@
 .checkout {
 	color: $color3;
 	display: flex;
-	// justify-content: space-around;
 	background-color: $color5;
 	padding: 20px;
 	height: max-content;
+	// width: 100%;
 	.left {
+		flex: auto;
 		.ad {
 			width: 100%;
 			margin-bottom: 10px;
@@ -24,6 +25,6 @@
 		}
 	}
 	.right {
-		flex: 2;
+		flex: 1;
 	}
 }

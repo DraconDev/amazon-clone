@@ -4,7 +4,7 @@
 
 a {
 	/*? To fix Link Tags messing with container size */
-	height: inherit;
+	height: unset;
 	text-decoration: none;
 }
 

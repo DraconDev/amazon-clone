@@ -5,3 +5,12 @@ export interface ItemProps {
 	price: number;
 	rating: number;
 }
+
+export interface appInitialStateProps {
+	basket: [];
+	imageLinks: {
+		banner: string;
+		mainLogo: string;
+	};
+	user: boolean;
+}

@@ -22,9 +22,7 @@ interface productProps {
 //? Desctructure with types
 function Product({ id, title, price, rating, image }: productProps) {
 	const [state2, dispatch2] = useContext(AppContext);
-	// console.log("useStateValue", useStateValue());
-	// console.log("state2", state2);
-	// console.log("dispatch2", dispatch2);
+
 	const dispatch = useDispatchStore();
 
 	function addToBasket() {

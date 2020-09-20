@@ -6,8 +6,9 @@
 	.option {
 		display: flex;
 		flex-direction: column;
-		margin: 0 10px;
+		margin: 0 7px;
 		color: $color3;
+		justify-content: center;
 
 		.optionLineOne {
 			font-size: 10px;
@@ -15,6 +16,14 @@
 		.optionLineTwo {
 			font-weight: 800;
 			font-size: 13px;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.nav {
+		.premium {
+			display: none;
 		}
 	}
 }

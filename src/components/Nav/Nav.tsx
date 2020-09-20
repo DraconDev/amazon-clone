@@ -4,6 +4,7 @@ import { useStore } from "../../store/customHooks/customHooks";
 import classes from "./Nav.module.scss";
 import { useStateValue } from "./../../store/customHooks/customHooks";
 import Basket from "./../Basket/Basket";
+import { authenticate } from "../../firebase/firebaseInit";
 
 const navInfo = [
 	{ first: "Hello Guest", second: "Sign In" },
@@ -11,26 +12,31 @@ const navInfo = [
 	{ first: "Your", second: "Prime" },
 ];
 function Nav() {
-	const [state, dispatch] = useStateValue();
+	const [{ basket, user }, dispatch] = useStateValue();
+
+	function handleAuthentication() {
+		if (user) {
+			authenticate.signOut();
+		}
+	}
 	return (
 		<div className={classes.nav}>
-			{/* {navInfo.map((e, i) => (
-				<div key={i} className={classes.option}>
-					<span className={classes.optionLineOne}>{e.first}</span>
-					<span className={classes.optionLineTwo}>{e.second}</span>
-				</div>
-			))} */}
-			<Link to="/login">
-				<div className={classes.option}>
+			<Link to={`${!user && "/login"}`}>
+				<div
+					className={`${classes.option} ${classes.login}`}
+					onClick={handleAuthentication}
+				>
 					<span className={classes.optionLineOne}>{"Hello"}</span>
-					<span className={classes.optionLineTwo}>{"Sign In"}</span>
+					<span className={classes.optionLineTwo}>
+						{!user ? "Sign In" : "Sign out"}
+					</span>
 				</div>
 			</Link>
-			<div className={classes.option}>
+			<div className={`${classes.option} ${classes.orders}`}>
 				<span className={classes.optionLineOne}>{"Returns"}</span>
 				<span className={classes.optionLineTwo}>{"Orders"}</span>
 			</div>
-			<div className={classes.option}>
+			<div className={`${classes.option} ${classes.premium}`}>
 				<span className={classes.optionLineOne}>{"Your"}</span>
 				<span className={classes.optionLineTwo}>{"Prime"}</span>
 			</div>

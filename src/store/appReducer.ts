@@ -1,4 +1,5 @@
-import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "./actionTypes";
+import { appInitialStateProps } from "../types/types";
+import { ADD_TO_BASKET, REMOVE_FROM_BASKET, SET_USER } from "./actionTypes";
 
 // interface reducerProps {
 // 	state: { basket: any };
@@ -15,7 +16,6 @@ export function appReducer(state: any, action: any) {
 				basket: [...state.basket, action.item],
 			};
 		case REMOVE_FROM_BASKET:
-			console.log("test", action);
 			const index = state.basket.findIndex((e: any) => e.id === action.id);
 			let newBasket = [...state.basket];
 			if (index >= 0) {
@@ -27,6 +27,8 @@ export function appReducer(state: any, action: any) {
 				...state,
 				basket: newBasket,
 			};
+		case SET_USER:
+			return { ...state, user: action.user };
 		default:
 			return state;
 	}

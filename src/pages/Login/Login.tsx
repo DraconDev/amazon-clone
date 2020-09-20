@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { authenticate } from "../../firebase/firebaseInit";
 
 import { useGetImage } from "../../store/customHooks/customHooks";
@@ -14,7 +14,6 @@ function Login(props: Props) {
 	const history = useHistory();
 
 	const signIn = (e: any) => {
-		console.log("signIn");
 		e.preventDefault();
 		authenticate
 			.signInWithEmailAndPassword(email, password)
@@ -41,7 +40,9 @@ function Login(props: Props) {
 
 	return (
 		<div className={classes.login}>
-			<img className={classes.logo} src={useGetImage("mainLogo")} alt="" />
+			<Link to="/">
+				<img className={classes.logo} src={useGetImage("mainLogo")} alt="" />
+			</Link>
 			<form action="" className={classes.form}>
 				<h5>E-mail</h5>
 				<input

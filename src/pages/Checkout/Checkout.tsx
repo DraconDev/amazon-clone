@@ -10,7 +10,9 @@ import {
 import classes from "./Checkout.module.scss";
 
 function Checkout() {
-	const [basket, dispatch] = useStateValue();
+	const [{ basket, user }, dispatch] = useStateValue();
+
+	console.log("basket,user", basket, user);
 	return (
 		<div className={classes.checkout}>
 			<div className={classes.left}>
@@ -18,6 +20,8 @@ function Checkout() {
 					<img className={classes.ad} src={useGetImage("banner")} alt="" />
 				</Link>
 				<div className={classes.basket}>
+					<h3 className={classes.user}>{user?.email}</h3>
+
 					<h2 className={classes.title}>Your shopping basket</h2>
 					<BasketItems></BasketItems>
 				</div>
