@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useStore } from "../../store/customHooks/customHooks";
 import classes from "./Nav.module.scss";
 import { useStateValue } from "./../../store/customHooks/customHooks";
 import Basket from "./../Basket/Basket";

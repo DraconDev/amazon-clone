@@ -1,30 +1,25 @@
 import { Button } from "@material-ui/core";
-import React, { useContext } from "react";
+import React from "react";
+import { truncate } from "../../helpers/truncate";
 import { ADD_TO_BASKET } from "../../store/actionTypes";
-import { AppContext } from "../../store/AppContext";
-import {
-	useDispatchStore,
-	useStateValue,
-	useStore,
-} from "../../store/customHooks/customHooks";
+import { useDispatchStore } from "../../store/customHooks/customHooks";
 import StarRating from "../StarRating/StarRating";
 import classes from "./Product.module.scss";
-import { truncate } from "../../helpers/truncate";
+import { productInfo } from "./../../data/productInfo";
+var faker = require("faker");
 
-interface productProps {
-	title: string;
-	price: number;
-	rating: number;
-	image: string;
-	id?: string;
-}
+function Product() {
+	console.log(
+		faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}")
+	);
 
-//? Desctructure with types
-function Product({ id, title, price, rating, image }: productProps) {
-	const [state2, dispatch2] = useContext(AppContext);
-
+	console.log(
+		faker.fake(
+			"{{commerce.price}}, {{commerce.productMaterial}} {{commerce.productDescription}}"
+		)
+	);
 	const dispatch = useDispatchStore();
-
+	const { id, title, price, rating, image } = productInfo();
 	function addToBasket() {
 		return dispatch({
 			type: ADD_TO_BASKET,

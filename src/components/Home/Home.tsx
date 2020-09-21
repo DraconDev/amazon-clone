@@ -1,22 +1,7 @@
-import { title } from "process";
 import React from "react";
 import Product from "../Product/Product";
 import classes from "./Home.module.scss";
-
-const productInfo = {
-	id: `${Math.floor(Math.random() * 9)}${Math.floor(
-		Math.random() * 9
-	)}${Math.floor(Math.random() * 9)}${Math.floor(
-		Math.random() * 9
-	)}${Math.floor(Math.random() * 9)}${Math.floor(Math.random() * 9)}`,
-	title:
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus quia et esse? Quod repellendus sit, ipsam voluptatibus consequuntur doloremque eaque dolorum. Atque amet eos ratione, sequi omnis veniam nesciunt.",
-	price: 267.14,
-	rating: Math.random() * 5,
-	image: `https://picsum.photos/900/900?random=${Math.floor(
-		Math.random() * 10 + 1
-	)})`,
-};
+import { productInfo } from "./../../data/productInfo";
 
 function Home() {
 	return (
@@ -28,19 +13,19 @@ function Home() {
 					alt=""
 				></img>
 				<div className={classes.row}>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
+					<Product></Product>
+					<Product></Product>
 				</div>
 				<div className={classes.row}>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
-					<Product {...productInfo}></Product>
+					<Product></Product>
+					<Product></Product>
+					<Product></Product>
+					<Product></Product>
+				</div>
+				<div className={classes.row}>
+					<Product></Product>
+					<Product></Product>
+					<Product></Product>
 				</div>
 			</div>
 		</div>

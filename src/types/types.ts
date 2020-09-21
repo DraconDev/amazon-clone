@@ -14,3 +14,11 @@ export interface appInitialStateProps {
 	};
 	user: boolean;
 }
+
+export interface productProps {
+	title: string;
+	price: number;
+	rating: number;
+	image: string;
+	id?: string;
+}

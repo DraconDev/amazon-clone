@@ -3,9 +3,12 @@
 }
 
 a {
-	/*? To fix Link Tags messing with container size */
-	height: unset;
 	text-decoration: none;
+}
+
+input:focus {
+	outline: none !important;
+	/* border: none; */
 }
 
 body {

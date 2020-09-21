@@ -9,7 +9,6 @@ interface StarRatingProps {
 
 function StarRating(props: StarRatingProps) {
 	const { rating } = props;
-	const stars: JSX.Element[] = [];
 
 	const CalculateRating = () => {
 		const stars = [];
