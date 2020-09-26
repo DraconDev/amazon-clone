@@ -34,10 +34,16 @@ function Payment() {
 	const user = useStore().user;
 
 	useEffect(() => {
+		console.log("clientSecret", clientSecret);
+	}, [clientSecret]);
+
+	useEffect(() => {
 		const getClientSecret = async () => {
 			const response = await axiosConfig({
 				method: "post",
 				url: `/payments/create?total=${basket * 100}`,
+				// url:
+				// 	"https://us-central1-clone-cb9d2.cloudfunctions.net/api/payments/create?total=50",
 			});
 			console.log("basket", basket);
 			console.log("response", response);
