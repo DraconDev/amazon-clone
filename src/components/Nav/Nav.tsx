@@ -31,10 +31,12 @@ function Nav() {
 					</span>
 				</div>
 			</Link>
+			<Link to={"/orders"}>
 			<div className={`${classes.option} ${classes.orders}`}>
 				<span className={classes.optionLineOne}>{"Returns"}</span>
 				<span className={classes.optionLineTwo}>{"Orders"}</span>
 			</div>
+			</Link>
 			<div className={`${classes.option} ${classes.premium}`}>
 				<span className={classes.optionLineOne}>{"Your"}</span>
 				<span className={classes.optionLineTwo}>{"Prime"}</span>

@@ -23,9 +23,9 @@ function Checkout() {
 				</div>
 			</div>
 			<div className={classes.basket}>
-				<h3 className={classes.user}>{useStore().user?.email}</h3>
+				{/* <h3 className={classes.user}>{useStore().user?.email}</h3> */}
 				<h2 className={classes.title}>Your shopping basket</h2>
-				<BasketItems></BasketItems>
+				{useStore().basket.length > 0 && <BasketItems></BasketItems>}
 			</div>
 		</div>
 	);

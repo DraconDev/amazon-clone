@@ -7,12 +7,16 @@
 	max-width: 300px;
 	min-width: 100px;
 	height: 100px;
+	margin-top: 5px;
 
 	padding: 20px;
 	background-color: $color1;
 	border: 1px solid $colorBorder;
 	border-radius: 3px;
 	align-items: center;
+	p {
+		text-align: center;
+	}
 
 	button {
 		background-color: $color2;
@@ -29,9 +33,9 @@
 	}
 }
 
-p {
-	text-align: center;
-}
+// p {
+// 	text-align: center;
+// }
 
 .checkoutButton {
 	align-self: center;

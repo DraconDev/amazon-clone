@@ -4,6 +4,7 @@ export interface ItemProps {
 	title: string;
 	price: number;
 	rating: number;
+	hideButton?: boolean;
 }
 
 export interface appInitialStateProps {

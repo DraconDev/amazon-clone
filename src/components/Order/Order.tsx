@@ -9,17 +9,19 @@ function Order({ order }: any) {
 	console.log("order", order);
 	return (
 		<div className={classes.order}>
+			<Typography>{`Order Id: ${order?.id}`}</Typography>
 			<Typography>
-				{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}
+				{`Order Date: ${moment
+					.unix(order.data.created)
+					.format("MMMM Do YYYY, h:mma")}`}
 			</Typography>
-			<Typography className={classes.order}>
-      {`$${currencyFormat(order.data.amount / 100)}`}
+			<Typography className={classes.amount}>
+				{`Order Total: $${currencyFormat(order.data.amount / 100)}`}
 				{/* <small>{order.id}</small> */}
 			</Typography>
 			{order.data.basket.map((item: any) => (
-				<CheckoutProduct {...item}></CheckoutProduct>
+				<CheckoutProduct {...item} hideButton={true}></CheckoutProduct>
 			))}
-			
 		</div>
 	);
 }

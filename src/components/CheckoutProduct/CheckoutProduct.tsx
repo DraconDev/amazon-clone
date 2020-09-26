@@ -12,6 +12,7 @@ function CheckoutProduct(props: ItemProps) {
 	const [state, dispatch] = useContext(AppContext);
 
 	// interface remoteFromBasketTypes {}
+	// console.log("CheckoutProduct Props", props);
 
 	function removeFromBasket() {
 		return dispatch({ type: REMOVE_FROM_BASKET, id: id });
@@ -34,14 +35,16 @@ function CheckoutProduct(props: ItemProps) {
 					</p>
 				</div>
 				<div className={classes.buttons}>
-					<Button
-						variant="contained"
-						color="default"
-						size="small"
-						onClick={() => removeFromBasket()}
-					>
-						Remove
-					</Button>
+					{!props?.hideButton && (
+						<Button
+							variant="contained"
+							color="default"
+							size="small"
+							onClick={() => removeFromBasket()}
+						>
+							Remove
+						</Button>
+					)}
 				</div>
 			</div>
 		</div>

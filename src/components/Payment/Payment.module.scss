@@ -65,15 +65,15 @@
 	padding: 5px;
 }
 
-button {
-	width: fit-content;
-	display: flex;
-	align-self: flex-end;
-}
-
 .totalAndOrder {
 	margin: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	button {
+		width: fit-content;
+		display: flex;
+		align-self: flex-end;
+		background-color: $color2;
+	}
 }

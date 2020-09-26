@@ -119,7 +119,7 @@ function Payment() {
 						<h3 className={classes.review}>Review items</h3>
 					</div>
 					<div className={classes.items}>
-						<BasketItems></BasketItems>
+						{useStore().basket.length > 0 && <BasketItems></BasketItems>}
 					</div>
 				</div>
 				<div className={classes.section}>
@@ -132,7 +132,7 @@ function Payment() {
 							<CardElement onChange={handleChange}></CardElement>
 						</form>
 						<div className={classes.totalAndOrder}>
-							<div className={classes.price}>{useBasketTotal()}</div>
+							<div className={classes.price}>Total: {useBasketTotal()}</div>
 							<Button
 								variant="contained"
 								color="default"

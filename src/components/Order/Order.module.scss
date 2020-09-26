@@ -1,4 +1,11 @@
 @import "../../theme/_style.scss";
 .order {
 	color: $color3;
+	margin-left: 5px;
+	background-color: $color5;
+	margin: 20px;
+	.amount {
+		border-bottom: 2px solid $colorBorder;
+		margin-bottom: 5px;
+	}
 }

@@ -3,9 +3,12 @@
 .checkoutProduct {
 	display: flex;
 	// margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	// margin: 20px;
 	// border: 1px solid $colorBorder;
+	// padding-bottom: 10px;
+	border-bottom: 1px solid $colorBorder;
+
 	padding: 1px;
 
 	.image {
