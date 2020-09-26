@@ -8,6 +8,7 @@ import useUserAuthChange from "./customHooks/useUserAuthChange";
 import Checkout from "./pages/Checkout/Checkout";
 import Login from "./pages/Login/Login";
 import StripeWrapper from "./stripe/stripeWrapper";
+import Orders from "./components/Orders/Orders";
 
 function App() {
 	useUserAuthChange();
@@ -15,6 +16,10 @@ function App() {
 		<Router>
 			<div className="app">
 				<Switch>
+					<Route path="/orders">
+						<Header></Header>
+						<Orders></Orders>
+					</Route>
 					<Route path="/login">
 						<Login></Login>
 					</Route>

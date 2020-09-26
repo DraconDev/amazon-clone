@@ -13,6 +13,7 @@ import axiosConfig from "../../axios/axiosConfig";
 import { useHistory } from "react-router-dom";
 import AppContext from "../../store/AppContext";
 import useHandleCardSubmit from "../../stripe/helpers/useHandleCardSubmit";
+import { db } from "../../firebase/firebaseInit";
 
 var faker = require("faker");
 
@@ -28,6 +29,8 @@ function Payment() {
 	const [processing, setProcessing] = useState(false);
 	const [succeeded, setSucceeded] = useState(false);
 	const [clientSecret, setClientSecret] = useState("");
+
+	const user = useStore().user;
 
 	useEffect(() => {
 		const getClientSecret = async () => {
@@ -56,8 +59,17 @@ function Payment() {
 				},
 			})
 			// .then(({ paymentIntent }) => {
-			.then((e) => {
-				console.log("paymentIntent", e?.paymentIntent);
+			.then(({ paymentIntent }: any) => {
+				db.collection("users")
+					.doc(user?.uid)
+					.collection("orders")
+					.doc(paymentIntent.id)
+					.set({
+						basket: basket,
+						amount: paymentIntent.amount,
+						created: paymentIntent.created,
+					});
+				console.log("paymentIntent", paymentIntent);
 				setSucceeded(true);
 				setError(null);
 				setProcessing(false);
