@@ -4,6 +4,8 @@
 
 * {
 	margin: 0;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }
 
 html {
@@ -12,7 +14,9 @@ html {
 
 ::-webkit-scrollbar {
 	width: 0px;
-	background: transparent; /* make scrollbar transparent */
+	background: transparent;
+	display: none;
+	/* make scrollbar transparent */
 }
 
 a {
