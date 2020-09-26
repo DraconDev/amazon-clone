@@ -7,7 +7,7 @@ import { authenticate } from "../../firebase/firebaseInit";
 
 const navInfo = [
 	{ first: "Hello Guest", second: "Sign In" },
-	{ first: "Returns", second: "Orders" },
+	{ first: "Returns &", second: "Orders" },
 	{ first: "Your", second: "Prime" },
 ];
 function Nav() {

@@ -3,22 +3,36 @@
 	margin-left: 10px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	max-width: 300px;
-	min-width: 200px;
+	min-width: 100px;
 	height: 100px;
+
 	padding: 20px;
 	background-color: $color1;
-	border: 1px solid $color3;
+	border: 1px solid $colorBorder;
 	border-radius: 3px;
+	align-items: center;
+
 	button {
 		background-color: $color2;
 	}
 	.gift {
 		display: flex;
 		align-items: center;
+		input {
+			margin-top: 5px;
+		}
 	}
 	.input {
 		margin-right: 5px;
 	}
+}
+
+p {
+	text-align: center;
+}
+
+.checkoutButton {
+	align-self: center;
 }

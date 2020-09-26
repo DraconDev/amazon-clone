@@ -6,16 +6,18 @@
 	.option {
 		display: flex;
 		flex-direction: column;
-		margin: 0 7px;
+		padding: 0 7px;
 		color: $color3;
 		justify-content: center;
 
 		.optionLineOne {
 			font-size: 10px;
+			text-align: center;
 		}
 		.optionLineTwo {
 			font-weight: 800;
 			font-size: 13px;
+			text-align: center;
 		}
 	}
 }
@@ -27,3 +29,5 @@
 		}
 	}
 }
+
+

@@ -8,7 +8,6 @@ import { ADD_TO_BASKET, REMOVE_FROM_BASKET, SET_USER } from "./actionTypes";
 
 //? should work
 export function appReducer(state: any, action: any) {
-	console.log("props", state, action);
 	switch (action.type) {
 		case ADD_TO_BASKET:
 			return {

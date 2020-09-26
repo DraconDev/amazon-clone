@@ -10,8 +10,9 @@ function BasketItems(props: BasketProps) {
 	const [state, dispatch] = useStateValue();
 	return (
 		<div className={classes.basketItems}>
-			{state?.basket.map((item: ItemProps) => (
+			{state?.basket.map((item: ItemProps, i: any) => (
 				<CheckoutProduct
+					key={i}
 					{...item}
 					// id={item.id}
 					// image={item.image}

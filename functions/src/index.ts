@@ -24,8 +24,33 @@ app.use(express.json());
 
 //* API routes
 app.get("/", (request: any, response: any) =>
-	response.status(200).send("hello world")
+	response.status(200).send("hello")
 );
+// app.get("/test", (request: any, response: any) =>
+// 	response.status(200).send("hello test")
+// );
+
+app.post("/payments/create", async (request: any, response: any) => {
+	const total = request.query.total;
+
+	console.log("payment request received", total);
+	console.log("requestBackend", request);
+
+	const paymentIntent = await stripe.paymentIntents.create({
+		amount: total,
+		currency: "usd",
+		// payment_method: "pk_test_BaS191rxSpqDLTQ0gv9iyrVi00VtmdtRfL",
+	});
+	response.status(201).send({
+		clientSecret: paymentIntent.client_secret,
+		cookies: "yes",
+	});
+});
 
 //* Listen command
 exports.api = functions.https.onRequest(app);
+
+//? Example endpoint
+// http://localhost:5001/clone-cb9d2/us-central1/api
+
+////* firebase emulators:start

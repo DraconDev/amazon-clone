@@ -44,13 +44,13 @@ function Login(props: Props) {
 				<img className={classes.logo} src={useGetImage("mainLogo")} alt="" />
 			</Link>
 			<form action="" className={classes.form}>
-				<h5>E-mail</h5>
+				<div className={classes.email}>E-mail</div>
 				<input
 					type="text"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-				<h5>Password</h5>
+				<div className={classes.password}>Password</div>
 				<input
 					type="password"
 					value={password}

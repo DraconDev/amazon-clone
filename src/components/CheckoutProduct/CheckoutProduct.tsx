@@ -22,28 +22,26 @@ function CheckoutProduct(props: ItemProps) {
 		<div className={classes.checkoutProduct}>
 			<img className={classes.image} src={image}></img>
 			<div className={classes.info}>
-				<p className={classes.title}>{title}</p>
+				<div className={classes.description}>{title}</div>
 
-				<div className={classes.bottom}>
-					<div className={classes.itemInfo}>
-						<p className={classes.price}>
-							<small>$</small>
-							<strong>{price}</strong>
-						</p>
-						<div className={classes.rating}>
-							<StarRating rating={rating}></StarRating>
-						</div>
-					</div>
-					<div className={classes.buttons}>
-						<Button
-							variant="contained"
-							color="default"
-							size="small"
-							onClick={() => removeFromBasket()}
-						>
-							Remove from basket
-						</Button>
-					</div>
+				<div className={classes.rating}>
+					<StarRating rating={rating}></StarRating>
+				</div>
+				<div className={classes.itemInfo}>
+					<p className={classes.price}>
+						<small>$</small>
+						<strong>{price}</strong>
+					</p>
+				</div>
+				<div className={classes.buttons}>
+					<Button
+						variant="contained"
+						color="default"
+						size="small"
+						onClick={() => removeFromBasket()}
+					>
+						Remove
+					</Button>
 				</div>
 			</div>
 		</div>

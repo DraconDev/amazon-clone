@@ -5,6 +5,8 @@
 	"dependencies": {
 		"@material-ui/core": "^4.11.0",
 		"@material-ui/icons": "^4.9.1",
+		"@stripe/react-stripe-js": "^1.1.2",
+		"@stripe/stripe-js": "^1.9.0",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
@@ -15,14 +17,17 @@
 		"@types/react-router-dom": "^5.1.5",
 		"@typescript-eslint/eslint-plugin": "4.0.1",
 		"@typescript-eslint/parser": "4.0.1",
+		"axios": "^0.20.0",
 		"faker": "^5.1.0",
 		"firebase": "^7.21.0",
 		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
 		"react-currency-format": "^1.0.0",
 		"react-dom": "^16.13.1",
+		"react-material-ui-carousel": "^2.0.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "^3.4.3",
+		"stripe": "^8.97.0",
 		"typescript": "^4.0.2"
 	},
 	"scripts": {

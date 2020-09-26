@@ -3,11 +3,13 @@ import React from "react";
 import { getBasketTotal } from "../../store/selectors";
 import { useStateValue } from "./../../store/customHooks/customHooks";
 import classes from "./Subtotal.module.scss";
+import { useHistory } from "react-router-dom";
 
 interface SubTotalProps {
 	value: number;
 }
 function Subtotal(props: SubTotalProps) {
+	const history = useHistory();
 	const [state, dispatch] = useStateValue();
 	return (
 		<div className={classes.subtotal}>
@@ -17,11 +19,10 @@ function Subtotal(props: SubTotalProps) {
 					{/* //? easy format for currency */}{" "}
 					{`$${getBasketTotal(state?.basket)}`}
 				</strong>
-				<small className={classes.gift}>
-					<input type="checkbox" /> this order contains a gift
-				</small>
 			</p>
-			<Button variant="contained">Proceed to checkout</Button>
+			<Button variant="contained" onClick={() => history.push("/payment")} className={classes.checkoutButton}>
+				Checkout
+			</Button>
 		</div>
 	);
 }
