@@ -33,6 +33,8 @@ app.get("/", (request: any, response: any) =>
 app.post("/payments/create", async (request: any, response: any) => {
 	const total = request.query.total;
 
+	console.log("requestReceived");
+
 	console.log("payment request received", total);
 	console.log("requestBackend", request);
 
