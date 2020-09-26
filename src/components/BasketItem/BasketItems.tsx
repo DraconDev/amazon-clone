@@ -8,6 +8,7 @@ interface BasketProps {}
 
 function BasketItems(props: BasketProps) {
 	const [state, dispatch] = useStateValue();
+	console.log('BasketItems - basket', state)
 	return (
 		<div className={classes.basketItems}>
 			{state?.basket.map((item: ItemProps, i: any) => (

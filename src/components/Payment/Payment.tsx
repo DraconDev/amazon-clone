@@ -24,6 +24,7 @@ function Payment() {
 	const history = useHistory();
 
 	const [basket, setBasket] = useState(useBasketTotalNumber());
+	const [basketItems, setBasketItems] = useState(useStore().basket);
 	const [error, setError] = useState(null);
 	const [disabled, setDisabled] = useState(null);
 	const [processing, setProcessing] = useState(false);
@@ -60,12 +61,13 @@ function Payment() {
 			})
 			// .then(({ paymentIntent }) => {
 			.then(({ paymentIntent }: any) => {
+				console.log("Payment Basket", basket, basketItems);
 				db.collection("users")
 					.doc(user?.uid)
 					.collection("orders")
 					.doc(paymentIntent.id)
 					.set({
-						basket: basket,
+						basket: basketItems,
 						amount: paymentIntent.amount,
 						created: paymentIntent.created,
 					});
