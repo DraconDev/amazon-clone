@@ -1,5 +1,7 @@
 @import "../../theme/_style.scss";
 .starRating {
+	display: flex;
+	justify-content: center;
 	.starIcon {
 		color: $color2;
 	}

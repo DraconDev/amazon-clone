@@ -3,6 +3,7 @@ import {
 	ADD_TO_BASKET,
 	EMPTY_BASKET,
 	REMOVE_FROM_BASKET,
+	SEARCH_ITEMS,
 	SET_USER,
 } from "./actionTypes";
 
@@ -38,6 +39,9 @@ export function appReducer(state: any, action: any) {
 				...state,
 				basket: newBasket,
 			};
+		case SEARCH_ITEMS:
+			console.log("search", action, action.search);
+			return { ...state, search: action.search };
 		case SET_USER:
 			return { ...state, user: action.user };
 		default:

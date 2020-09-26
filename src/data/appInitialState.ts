@@ -28,6 +28,7 @@ export const appInitialState = {
 		],
 	},
 	user: null,
+	search: [],
 };
 
 export default appInitialState;

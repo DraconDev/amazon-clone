@@ -14,8 +14,12 @@
 		height: 80%;
 		object-fit: contain;
 		// margin: 10px 20px 0px;
-		padding-top: 10px;
-		margin-left: 3px;
+		padding-top: 18px;
+
+		margin-right: 3px;
+	}
+	.search:hover {
+		cursor: pointer;
 	}
 	.search {
 		display: flex;

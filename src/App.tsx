@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout/Checkout";
 import Login from "./pages/Login/Login";
 import StripeWrapper from "./stripe/stripeWrapper";
 import Orders from "./components/Orders/Orders";
+import Search from "./components/Search/Search";
 
 function App() {
 	useUserAuthChange();
@@ -32,6 +33,10 @@ function App() {
 						<StripeWrapper>
 							<Payment />
 						</StripeWrapper>
+					</Route>
+					<Route path="/search">
+						<Header></Header>
+						<Search></Search>
 					</Route>
 					<Route path="/">
 						<Header></Header>

@@ -6,16 +6,45 @@ import { useDispatchStore } from "../../store/customHooks/customHooks";
 import StarRating from "../StarRating/StarRating";
 import classes from "./Product.module.scss";
 import { productInfo } from "./../../data/productInfo";
+import { title } from "process";
 var faker = require("faker");
 
-function Product() {
+// {
+// 	id?: any;
+// 	title?: string;
+// 	price?: number;
+// 	rating?: number;
+// 	image?: string;
+// }
+function Product(props: any) {
 	const dispatch = useDispatchStore();
-
-	//? prevent refresh
 	const saveProductInfo = useMemo(() => productInfo(), []);
-	const { id, title, price, rating, image } = saveProductInfo;
-	//?
+	console.log(props, " props");
 
+	// if (props?.search) {
+	// 	const { id, title, price, rating, image } = props;
+	// } else {
+	const { id, title, price, rating, image } =
+		(props?.id && props) || saveProductInfo;
+
+	// if (props?.id) {
+	// 	const { id, title, price, rating, image } = props;
+	// } else {
+	// 	const { id, title, price, rating, image } = saveProductInfo;
+	// }
+
+	//  (props.length > 0) ?
+	// 	const { id, title, price, rating, image } = props
+	// 	:
+	// 	const { id, title, price, rating, image } = saveProductInfo;
+
+	// props.search &&  { id, title, price, rating, image } = props;
+
+	// if (props?.search) {
+	// //? prevent refresh
+
+	// //?
+	// }
 	// const { id, title, price, rating, image } = productInfo();
 
 	function addToBasket() {
@@ -28,7 +57,7 @@ function Product() {
 	return (
 		<div className={classes.product}>
 			<img className={classes.productImage} src={image} alt=""></img>
-			<div className={classes.info}>{truncate(title, 160)}</div>
+			<div className={classes.info}>{truncate(title, 120)}</div>
 			<div className={classes.rating}>
 				<StarRating rating={rating} />
 			</div>

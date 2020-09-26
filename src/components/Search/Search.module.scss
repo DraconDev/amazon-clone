@@ -1,0 +1,35 @@
+@import "../../theme/_style.scss";
+
+.search {
+	display: flex;
+	// justify-content: space-around;
+	// margin: 0 10px;
+	width: 100vw;
+	z-index: 1;
+	flex-wrap: wrap;
+	// align-items: center;
+	justify-content: center;
+	.product {
+		min-width: 450px;
+		background-color: green;
+	}
+	div {
+		width: 23%;
+		div {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: $mobile) {
+	.search {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	// .home {
+	// 	.container {
+	// 		.image {
+	// 			width: 340px;
+	// 		}
+	// 	}
+	// }
+}
