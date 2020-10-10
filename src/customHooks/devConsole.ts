@@ -17,6 +17,6 @@ const devConsole = (element: any) => {
 	if (process.env.NODE_ENV === 'development') {
 		console.log('test', Object.keys({ element })[0], element);
 	}
-};
+	
 
 export default devConsole;
