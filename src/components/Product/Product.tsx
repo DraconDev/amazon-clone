@@ -1,13 +1,14 @@
-import { Button } from "@material-ui/core";
-import React, { useCallback, useMemo } from "react";
-import { truncate } from "../../helpers/truncate";
-import { ADD_TO_BASKET } from "../../store/actionTypes";
-import { useDispatchStore } from "../../store/customHooks/customHooks";
-import StarRating from "../StarRating/StarRating";
-import classes from "./Product.module.scss";
-import { productInfo } from "./../../data/productInfo";
-import { title } from "process";
-var faker = require("faker");
+import { Button } from '@material-ui/core';
+import React, { useCallback, useMemo } from 'react';
+import { truncate } from '../../helpers/truncate';
+import { ADD_TO_BASKET } from '../../store/actionTypes';
+import { useDispatchStore } from '../../store/customHooks/customHooks';
+import StarRating from '../StarRating/StarRating';
+import classes from './Product.module.scss';
+import { productInfo } from '../../constants/productInfo';
+import { title } from 'process';
+import consoleTest from '../../customHooks/console';
+var faker = require('faker');
 
 // {
 // 	id?: any;
@@ -19,7 +20,8 @@ var faker = require("faker");
 function Product(props: any) {
 	const dispatch = useDispatchStore();
 	const saveProductInfo = useMemo(() => productInfo(), []);
-	console.log(props, " props");
+	console.log(props, ' props here');
+	consoleTest(props);
 
 	// if (props?.search) {
 	// 	const { id, title, price, rating, image } = props;

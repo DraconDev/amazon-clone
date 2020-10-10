@@ -1,26 +1,26 @@
-import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import classes from "./LongMenu.module.scss";
-import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
-import menuItems from "../../data/menuItems";
+import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import classes from './LongMenu.module.scss';
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import menuItems from '../../constants/menuItems';
 
 const options = [
-	"None",
-	"Atria",
-	"Callisto",
-	"Dione",
-	"Ganymede",
-	"Hangouts Call",
-	"Luna",
-	"Oberon",
-	"Phobos",
-	"Pyxis",
-	"Sedna",
-	"Titania",
-	"Triton",
-	"Umbriel",
+	'None',
+	'Atria',
+	'Callisto',
+	'Dione',
+	'Ganymede',
+	'Hangouts Call',
+	'Luna',
+	'Oberon',
+	'Phobos',
+	'Pyxis',
+	'Sedna',
+	'Titania',
+	'Triton',
+	'Umbriel',
 ];
 
 const ITEM_HEIGHT = 48;
@@ -56,15 +56,15 @@ export default function LongMenu() {
 				PaperProps={{
 					style: {
 						maxHeight: ITEM_HEIGHT * 19,
-						width: "28ch",
-						marginTop: "45px",
+						width: '28ch',
+						marginTop: '45px',
 					},
 				}}
 			>
 				{menuItems.map((option) => (
 					<MenuItem
 						key={option}
-						selected={option === "Pyxis"}
+						selected={option === 'Pyxis'}
 						onClick={handleClose}
 					>
 						{option}

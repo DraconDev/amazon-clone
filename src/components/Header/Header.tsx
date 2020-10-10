@@ -1,17 +1,17 @@
-import SearchIcon from "@material-ui/icons/Search";
-import React, { useContext, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import Nav from "../Nav/Nav";
-import classes from "./Header.module.scss";
-import { useGetImage } from "./../../store/customHooks/customHooks";
-import LongMenu from "../LongMenu/LongMenu";
-import useFunctionOnKeypress from "../../customHooks/useActionOnKeypress";
-import arrayOfProducts from "./../../data/arrayOfProducts";
-import { AppContext } from "./../../store/AppContext";
-import { SEARCH_ITEMS } from "../../store/actionTypes";
+import SearchIcon from '@material-ui/icons/Search';
+import React, { useContext, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import classes from './Header.module.scss';
+import { useGetImage } from './../../store/customHooks/customHooks';
+import LongMenu from '../LongMenu/LongMenu';
+import useFunctionOnKeypress from '../../customHooks/useActionOnKeypress';
+import arrayOfProducts from '../../constants/arrayOfProducts';
+import { AppContext } from './../../store/AppContext';
+import { SEARCH_ITEMS } from '../../store/actionTypes';
 
 function Header() {
-	const [inputField, setInputField] = useState("");
+	const [inputField, setInputField] = useState('');
 	const history = useHistory();
 	const [state, dispatch] = useContext(AppContext);
 
@@ -39,8 +39,8 @@ function Header() {
 			type: SEARCH_ITEMS,
 			search: searchState,
 		});
-		history.push('/search')
-		setInputField("");
+		history.push('/search');
+		setInputField('');
 	}
 
 	useFunctionOnKeypress(Search);
@@ -49,7 +49,7 @@ function Header() {
 		<div className={classes.header}>
 			<LongMenu></LongMenu>
 			<Link to="/">
-				<img className={classes.logo} src={useGetImage("mainLogo")} alt="" />
+				<img className={classes.logo} src={useGetImage('mainLogo')} alt="" />
 			</Link>
 			<div className={classes.search}>
 				<input
