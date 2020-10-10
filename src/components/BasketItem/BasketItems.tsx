@@ -1,14 +1,17 @@
-import React from "react";
-import { useStateValue } from "../../store/customHooks/customHooks";
-import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
-import classes from "./BasketItems.module.scss";
-import { ItemProps } from "../../types/types";
+import React from 'react';
+import { useStateValue } from '../../store/customHooks/customHooks';
+import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
+import classes from './BasketItems.module.scss';
+import { ItemProps } from '../../types/types';
+import devConsole from './../../customHooks/devConsole';
+import dev from '../../customHooks/dev';
 
 interface BasketProps {}
 
 function BasketItems(props: BasketProps) {
 	const [state, dispatch] = useStateValue();
-	console.log('BasketItems - basket', state)
+	// console.log('BasketItems - basket', state, __filename, BasketItems.name);
+	dev() && console.log('dev(state)', state);
 	return (
 		<div className={classes.basketItems}>
 			{state?.basket.map((item: ItemProps, i: any) => (

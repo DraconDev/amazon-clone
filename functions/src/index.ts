@@ -1,8 +1,9 @@
-import * as functions from "firebase-functions";
-import { stripeKey } from "./stripe/stripeKey";
-const express = require("express");
-const cors = require("cors");
-const stripe = require("stripe")(stripeKey);
+import * as functions from 'firebase-functions';
+import { stripeKey } from './stripe/stripeKey';
+import devConsole from './../../src/customHooks/devConsole';
+const express = require('express');
+const cors = require('cors');
+const stripe = require('stripe')(stripeKey);
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -10,7 +11,8 @@ const stripe = require("stripe")(stripeKey);
 // export const helloWorld = functions.https.onRequest((request, response) => {
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
-console.log("stripe", stripe);
+// console.log('stripe', stripe);
+// devConsole('stripe');
 
 // });
 //* API
@@ -23,29 +25,29 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 //* API routes
-app.get("/", (request: any, response: any) =>
-	response.status(200).send("hello")
+app.get('/', (request: any, response: any) =>
+	response.status(200).send('hello')
 );
 // app.get("/test", (request: any, response: any) =>
 // 	response.status(200).send("hello test")
 // );
 
-app.post("/payments/create", async (request: any, response: any) => {
+app.post('/payments/create', async (request: any, response: any) => {
 	const total = request.query.total;
 
-	console.log("requestReceived");
+	console.log('requestReceived');
 
-	console.log("payment request received", total);
-	console.log("requestBackend", request);
+	console.log('payment request received', total);
+	console.log('requestBackend', request);
 
 	const paymentIntent = await stripe.paymentIntents.create({
 		amount: total,
-		currency: "usd",
+		currency: 'usd',
 		// payment_method: "pk_test_BaS191rxSpqDLTQ0gv9iyrVi00VtmdtRfL",
 	});
 	response.status(201).send({
 		clientSecret: paymentIntent.client_secret,
-		cookies: "yes",
+		cookies: 'yes',
 	});
 });
 
