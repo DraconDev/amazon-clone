@@ -7,7 +7,6 @@ import StarRating from '../StarRating/StarRating';
 import classes from './Product.module.scss';
 import { productInfo } from '../../constants/productInfo';
 import { title } from 'process';
-import consoleTest from '../../customHooks/devConsole';
 var faker = require('faker');
 
 // {

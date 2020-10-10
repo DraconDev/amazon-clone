@@ -5,6 +5,10 @@ const express = require('express');
 const cors = require('cors');
 const stripe = require('stripe')(stripeKey);
 
+if (process.env.NODE_ENV === 'production') {
+	window.console.log = function () {};
+}
+
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //

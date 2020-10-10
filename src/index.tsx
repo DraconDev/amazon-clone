@@ -6,6 +6,11 @@ import { StateProvider } from './store/StateProvider';
 import appInitialState from './constants/appInitialState';
 import { appReducer } from './store/appReducer';
 
+// console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+	window.console.log = function () {};
+}
+
 ReactDOM.render(
 	<React.StrictMode>
 		<StateProvider initialState={appInitialState} reducer={appReducer}>
